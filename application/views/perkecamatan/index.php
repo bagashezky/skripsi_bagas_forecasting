@@ -9,7 +9,7 @@
                     <div class="col-md-8">
                         <h4 class="page-title mb-1">Kecamatan <?= $dt_kecamatan['kecamatan']?></h4>
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Provinsi DKI Jakarta</li>
+                            <li class="breadcrumb-item active">Kabupaten Pangandaran</li>
                         </ol>
                     </div>
                 </div>

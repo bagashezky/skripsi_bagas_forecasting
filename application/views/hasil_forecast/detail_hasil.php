@@ -1,7 +1,7 @@
 <!-- <?php
     // foreach($at as $at){
         
-    // echo((double)$at['jumlah_air']);
+    // echo((double)$at['jumlah_penyakit']);
     // echo(',');
     // }
     //   die;                                      
@@ -15,9 +15,9 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h4 class="page-title mb-1">Kecamatan <?= $dt_kecamatan['kecamatan']?></h4>
+                        <h4 class="page-title mb-1">Penyakit <?= $dt_penyakit['penyakit']?></h4>
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Provinsi DKI Jakarta</li>
+                            <li class="breadcrumb-item active">Kabupaten Pangandaran</li>
                         </ol>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                                 <div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
                                 </div>
                                 <h4 class="header-title">Chart Hasil Perhitungan</h4>
-                                <p class="card-title-desc">Chart Hasil Forecasting Penggunaan Air Kecamatan
-                                    <?= $dt_kecamatan['kecamatan']?></p>
+                                <p class="card-title-desc">Chart Hasil Forecasting Penyakit Mata
+                                    <?= $dt_penyakit['penyakit']?></p>
                                 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
                                 <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
                                 <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script> -->
@@ -60,7 +60,7 @@
                                                 foreach($at as $at):
                                             
                                             ?>
-                                            <?= (double)$at['jumlah_air'].','?>
+                                            <?= (double)$at['jumlah_penyakit'].','?>
                                             <?php
                                             endforeach;
                                             ?>
@@ -117,18 +117,18 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Perhitungan Permalan</h4>
-                                <p class="card-title-desc">Penggunaan Air Kecamatan
-                                    <?= $dt_kecamatan['kecamatan']?></p>
+                                <p class="card-title-desc">Penyakit Mata
+                                    <?= $dt_penyakit['penyakit']?></p>
 
                                 <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
 
                                 </div>
                                 <div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
                                 </div>
-                                <!-- <?= var_dump($dt_kecamatan['id_kecamatan'])?> -->
+                                <!-- <?= var_dump($dt_penyakit['id_penyakit'])?> -->
 
                                 <br>
-                                <!-- <?= var_dump($data_air)?> -->
+                                <!-- <?= var_dump($data_penyakit)?> -->
                                 <table id="datatable" class="table table-bordered dt-responsive "
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -136,11 +136,11 @@
                                             <th>No.</th>
                                             <th>Tahun</th>
                                             <th>Bulan</th>
-                                            <th>Jumlah Air m3 (At)</th>
-                                            <th>Y'</th>
-                                            <th>Y''</th>
-                                            <th>a</th>
-                                            <th>b</th>
+                                            <th>Jumlah Penyakit (At)</th>
+                                            <th>S'</th>
+                                            <th>S''</th>
+                                            <th>At</th>
+                                            <th>Bt</th>
 
                                             <th>Hasil Forecast</th>
 
@@ -155,7 +155,7 @@
                                             <td style="width: 4%;"><?= $n0?></td>
                                             <td style="width: 7%;"><?= $hitung['tahun']; ?></td>
                                             <td><?= $hitung['bulan']; ?></td>
-                                            <td><?= $hitung['jumlah_air']; ?></td>
+                                            <td><?= $hitung['jumlah_penyakit']; ?></td>
                                             <td><?= $hitung['y_aksen']; ?></td>
                                             <td><?= $hitung['y_dbl_aksen']; ?></td>
                                             <td><?= $hitung['a']; ?></td>
@@ -181,29 +181,29 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Perhitungan Mean Absolute Percentage Error (MAPE)</h4>
-                                <p class="card-title-desc">Permalan Data Penggunaan Air Kecamatan
-                                    <?= $dt_kecamatan['kecamatan']?></p>
+                                <p class="card-title-desc">Permalan Data Penyakit Mata
+                                    <?= $dt_penyakit['penyakit']?></p>
 
                                 <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
 
                                 </div>
                                 <div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
                                 </div>
-                                <!-- <?= var_dump($dt_kecamatan['id_kecamatan'])?> -->
+                                <!-- <?= var_dump($dt_penyakit['id_penyakit'])?> -->
 
                                 <br>
 
                                 <br>
-                                <!-- <?= var_dump($data_air)?> -->
+                                <!-- <?= var_dump($data_penyakit)?> -->
                                 <table id="datatable" class="table table-bordered dt-responsive "
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Jumlah Air m3 (At)</th>
+                                            <th>Jumlah Penyakit (Xt)</th>
                                             <th>Hasil Forecast (Ft)</th>
-                                            <th>at_ft</th>
-                                            <th>abs_at_ft_bagiat</th>
+                                            <th>Xt_Ft</th>
+                                            <th>abs_Xt_Xt_bagiXt</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -211,7 +211,7 @@
                                         <?php foreach ($haha as $haha1) : ?>
                                         <tr>
                                             <td style="width: 4%;"><?= $n0?></td>
-                                            <td><?= $haha1['jumlah_air']; ?></td>
+                                            <td><?= $haha1['jumlah_penyakit']; ?></td>
                                             <td><?= $haha1['hasil_forecast']; ?></td>
                                             <td><?= $haha1['at_ft']; ?></td>
                                             <td><?= $haha1['abs_at_ft_bagiat']; ?></td>
@@ -236,21 +236,21 @@
                             <div class="card-body">
 
                                 <h4 class="header-title">Permalan Masa Depan</h4>
-                                <p class="card-title-desc">Penggunaan Air Kecamatan
-                                    <?= $dt_kecamatan['kecamatan']?></p>
+                                <p class="card-title-desc">Peramalan Penyakit Mata
+                                    <?= $dt_penyakit['penyakit']?></p>
 
                                 <div class="flash-data-news" data-flashdata="<?= $this->session->flashdata('flash') ?>">
 
                                 </div>
                                 <div class="flash-data-data" data-flashdata="<?= $this->session->flashdata('data') ?>">
                                 </div>
-                                <!-- <?= var_dump($dt_kecamatan['id_kecamatan'])?> -->
-                                <a href="<?=base_url()?>hasil/ramal/<?= $dt_kecamatan['id_kecamatan']?>"
+                                <!-- <?= var_dump($dt_penyakit['id_penyakit'])?> -->
+                                <a href="<?=base_url()?>hasil/ramal/<?= $dt_penyakit['id_penyakit']?>"
                                     type="button p-1 mb-2 " class="btn btn-success mdi mdi-plus mx-auto">Ramal Masa
                                     Depan</a>
                                 <br>
                                 <br>
-                                <!-- <?= var_dump($data_air)?> -->
+                                <!-- <?= var_dump($data_penyakit)?> -->
                                 <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -258,7 +258,7 @@
                                             <th>No.</th>
                                             <th>Tahun</th>
                                             <th>Bulan</th>
-                                            <th>Jumlah Air m3 (At)</th>
+                                            <th>Jumlah Penyakit(At)</th>
 
 
                                         </tr>
@@ -270,7 +270,7 @@
                                             <td><?=$n0?></td>
                                             <td><?=$masa_dpn['tahun']?></td>
                                             <td><?=$masa_dpn['bulan']?></td>
-                                            <td><?=$masa_dpn['jumlah_air']?></td>
+                                            <td><?=$masa_dpn['jumlah_penyakit']?></td>
 
                                         </tr>
                                         <?php $n0++ ?>

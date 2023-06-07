@@ -12,9 +12,7 @@
                             <li class="breadcrumb-item active">Seluruh Kab. Pangandaran</li>
                         </ol>
                     </div>
-
                 </div>
-
             </div>
         </div>
         <!-- end page title end breadcrumb -->

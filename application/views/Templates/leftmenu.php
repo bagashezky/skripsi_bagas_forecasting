@@ -25,17 +25,7 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="<?= base_url()?>kecamatan" class="waves-effect">
-                            <div class="d-inline-block icons-sm mr-1"><i class="uim uim-upload-alt"></i></div>
-                            <span>Data Kecamatan</span>
-                        </a>
-                        <!-- <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Email Read</a></li>
-                            <li><a href="email-compose.html">Email Compose</a></li>
-                        </ul> -->
-                    </li>
+                    
                     <li>
                         <a href="<?= base_url()?>penyakit" class="waves-effect">
                             <div class="d-inline-block icons-sm mr-1"><i class="uim uim-upload-alt"></i></div>

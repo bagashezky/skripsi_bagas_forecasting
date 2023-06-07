@@ -51,7 +51,7 @@
                                             <div class="form-group">
                                                 
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" value="<?= $dt_kecamatan['id_kecamatan']?>"  hidden name="id_kecamatan">
+                                                    aria-describedby="emailHelp" value="<?= $dt_penyakit['id_penyakit']?>"  hidden name="id_penyakit">
                                                 
                                             </div>
                                             <div class="form-group ">

@@ -27,7 +27,7 @@
                         <div class="card">
                             <div class="card-body">
                                
-                                <h4 class="header-title">Hasil Forecast Perkecamatan Seluruh Provinsi DKI Jakarta</h4>
+                                <h4 class="header-title">Hasil Forecast Perpenyakit Seluruh Kab. Pangandaran</h4>
                                 <div class="flash-data-news"
                                             data-flashdata="<?= $this->session->flashdata('flash') ?>">
 
@@ -44,22 +44,22 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Kecamatan</th>
+                                            <th>Nama Penyakit</th>
                                             <th>Aksi</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php $n0 = 1; ?>
-                                        <?php foreach ($data_kecamatan as $dtkec) : ?>
+                                        <?php foreach ($data_penyakit as $dtkec) : ?>
                                         <tr>
                                             <td style="width: 4%;"><?= $n0?></td>
                                             <td><a class="text-dark"
-                                                    href="<?= base_url(); ?>hasil/detail/<?= $dtkec['id_kecamatan']; ?>"
-                                                    style=" color:white;" data-toggle="tooltip" data-placement="right" title="Lihat Hasil Kecamatan <?= $dtkec['kecamatan'] ?>"><?= $dtkec['kecamatan'] ?></a></td>
+                                                    href="<?= base_url(); ?>hasil/detail/<?= $dtkec['id_penyakit']; ?>"
+                                                    style=" color:white;" data-toggle="tooltip" data-placement="right" title="Lihat Hasil Kecamatan <?= $dtkec['penyakit'] ?>"><?= $dtkec['penyakit'] ?></a></td>
                                             <td style="width: 15%;">
-                                                <a class="btn btn-info mdi mdi-eye"  data-toggle="tooltip" data-placement="right" title="Lihat Hasil Kecamatan <?= $dtkec['kecamatan'] ?>"
-                                                    href="<?= base_url(); ?>hasil/detail/<?= $dtkec['id_kecamatan']; ?>"
+                                                <a class="btn btn-info mdi mdi-eye"  data-toggle="tooltip" data-placement="right" title="Lihat Hasil Kecamatan <?= $dtkec['penyakit'] ?>"
+                                                    href="<?= base_url(); ?>hasil/detail/<?= $dtkec['id_penyakit']; ?>"
                                                     style=" color:white;"></a>
                                             
                                             </td>

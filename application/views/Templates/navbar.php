@@ -11,7 +11,12 @@
                             <img src="<?=base_url()?>assets/images/favicon.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?=base_url()?>assets/images/logo.png" alt="" width="85%">
+                            <!-- <img src="<?=base_url()?>assets/images/logo.png" alt="" width="85%"> -->
+                            <a href="" style="
+    position: relative;
+    top: 37px;
+    font-size: x-large;
+">Forecasting</a>
                         </span>
                     </a>
 

@@ -7,14 +7,14 @@ class Ramal_model extends CI_model
         $this->db->from('ramal_masadepan');
         return $this->db->get()->result_array();
     }
-    public function add_ramal($id_kecamatan,$tahun,$bulan,$jumlah_air)
+    public function add_ramal($id_penyakit,$tahun,$bulan,$jumlah_penyakit)
     {
         $data = array(
             'id_ramal_masadepan'    => "",
-            'id_kecamatan'    => $id_kecamatan,
+            'id_penyakit'    => $id_penyakit,
             'tahun'    => $tahun,
             'bulan'    => $bulan,
-            'jumlah_air'    => $jumlah_air
+            'jumlah_penyakit'    => $jumlah_penyakit
         );
  
         $this->db->insert('ramal_masadepan', $data);

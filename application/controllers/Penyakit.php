@@ -27,11 +27,11 @@ class Penyakit extends CI_Controller {
 	public function detail($id)
 	{
 		// $data['nama'] = "Data Kecamatan";
-		$data['data_air']=$this->Dataair_model->get_all_data_air($id);
+		$data['data_penyakit']=$this->Datapenyakit_model->get_all_data_penyakit($id);
 		$id_user=$this->session->userdata('id_user');
         $data['user']=$this->User_model->get_user($id_user);
-		$data['dt_kecamatan'] = $this->Kecamatan_model->get_kecamatan_byid($id);
-		$data['nama'] = $data['dt_kecamatan']['kecamatan'];
+		$data['dt_penyakit'] = $this->Kecamatan_model->get_kecamatan_byid($id);
+		$data['nama'] = $data['dt_penyakit']['kecamatan'];
 		
         $this->load->view('Templates/header.php',$data);
         $this->load->view('Templates/navbar.php',$data);
@@ -41,17 +41,17 @@ class Penyakit extends CI_Controller {
 	}
 	public function edit($id)
 	{
-		$data['nama'] = "Edit Data Kecamatan";
+		$data['nama'] = "Edit Data Penyakit";
 		
-		$data['data_kecamatan_id']=$this->Kecamatan_model->get_kecamatan_byid($id);
+		$data['data_penyakit_id']=$this->Penyakit_model->get_penyakit_byid($id);
 		$id_user=$this->session->userdata('id_user');
         $data['user']=$this->User_model->get_user($id_user);
-		$this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required');
+		$this->form_validation->set_rules('penyakit', 'Penyakit', 'required');
 		if ($this->form_validation->run() == false) {
 			$this->load->view('Templates/header.php',$data);
 			$this->load->view('Templates/navbar.php',$data);
 			$this->load->view('Templates/leftmenu.php',$data);
-			$this->load->view('kecamatan/kec_edit.php',$data);
+			$this->load->view('penyakit/penyakit_edit.php',$data);
 			$this->load->view('Templates/footer.php',$data);
 			}
 			else{
@@ -59,17 +59,17 @@ class Penyakit extends CI_Controller {
 			}
 	}
 	public function e(){
-		$kecamatan =$this->input->post('kecamatan', true);
-		$id_kecamatan =$this->input->post('id_kecamatan', true);
+		$penyakit =$this->input->post('penyakit', true);
+		$id_penyakit =$this->input->post('id_penyakit', true);
 		
-		// echo($id_kecamatan);
+		// echo($id_penyakit);
 		// echo($kecamatan);
-		$this->db->set('kecamatan',$kecamatan);
-        $this->db->where('id_kecamatan',$id_kecamatan);
-        $this->db->update('m_kecamatan');
+		$this->db->set('penyakit',$penyakit);
+        $this->db->where('id_penyakit',$id_penyakit);
+        $this->db->update('m_penyakit');
 		$this->session->set_flashdata('flash', 'Diupdate');
-		$this->session->set_flashdata('data', 'Kecamatan');
-		redirect('kecamatan');
+		$this->session->set_flashdata('data', 'Penyakit');
+		redirect('penyakit');
 	}
 	public function tambah()
 	{
@@ -96,9 +96,9 @@ class Penyakit extends CI_Controller {
 	
 	public function tambahair($id)
 	{
-		$data['dt_kecamatan'] = $this->Kecamatan_model->get_kecamatan_byid($id);
-		$data['nama'] = $data['dt_kecamatan'];
-		$data['dkc'] = $data['dt_kecamatan']['id_kecamatan'];
+		$data['dt_penyakit'] = $this->Kecamatan_model->get_kecamatan_byid($id);
+		$data['nama'] = $data['dt_penyakit'];
+		$data['dkc'] = $data['dt_penyakit']['id_penyakit'];
 		$id_user=$this->session->userdata('id_user');
         $data['user']=$this->User_model->get_user($id_user);
 		$this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required');
@@ -112,35 +112,35 @@ class Penyakit extends CI_Controller {
 	}
 	public function saveair()
 	{
-		// $id_data_air =$this->input->post('id_data_air', true);
-		$id_kecamatan=$this->input->post('id_kecamatan', true);
+		// $id_data_penyakit =$this->input->post('id_data_penyakit', true);
+		$id_penyakit=$this->input->post('id_penyakit', true);
 		$bulan_tahun=date($this->input->post('bulan_tahun', true));
 		$jumlah_air=date($this->input->post('jumlah_air', true));
 		$bulan=date("m",strtotime($bulan_tahun));
 		$tahun=date("Y",strtotime($bulan_tahun));
 		$jumlah_air=$this->input->post('jumlah_air', true);
 		
-		$this->Dataair_model->add_data_air($id_kecamatan,$bulan,$tahun,$jumlah_air);
+		$this->Dataair_model->add_data_penyakit($id_penyakit,$bulan,$tahun,$jumlah_air);
 		$this->session->set_flashdata('flash', 'Ditambahkan');
 		$this->session->set_flashdata('data', 'Data air');
-		$url='Kecamatan/detail/'.$id_kecamatan;
+		$url='Kecamatan/detail/'.$id_penyakit;
 		redirect($url);
 	}
 	public function hapus($id)
 	{
-		$this->Kecamatan_model->hps_kecamatan($id);
+		$this->Penyakit_model->hps_penyakit($id);
 		$this->session->set_flashdata('flash', 'dihapus');
-        $this->session->set_flashdata('data', 'Kecamatan');
-        redirect('kecamatan');
+        $this->session->set_flashdata('data', 'Penyakit');
+        redirect('penyakit');
 	}
 	public function hapusair($id)
 	{
 		$idkc=$this->Dataair_model->get_id_kec_byair($id);
-		$id_kecamatan=$idkc[0]['id_kecamatan'];
-		$this->Dataair_model->hps_data_air($id);
+		$id_penyakit=$idkc[0]['id_penyakit'];
+		$this->Dataair_model->hps_data_penyakit($id);
 		$this->session->set_flashdata('flash', 'dihapus');
         $this->session->set_flashdata('data', 'Data air');
-		$url='Kecamatan/detail/'.$id_kecamatan;
+		$url='Kecamatan/detail/'.$id_penyakit;
 		redirect($url);
 	}
 }
